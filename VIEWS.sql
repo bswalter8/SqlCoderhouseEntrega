@@ -20,3 +20,11 @@ AS SELECT AlbumTrack.TrackNumber AS "Numero de track en el disco", TRACK.Nombre 
 FROM AlbumTrack
 INNER JOIN Track ON AlbumTrack.Track = TRACK.ID_Track
 INNER JOIN Album ON AlbumTrack.Album = Album.ID_Album;
+
+-- Crea view de todos los musicos y el track grabado 
+
+CREATE VIEW MUSICO_TRACK
+AS SELECT Musico.Nombre AS "Nombre Musico", TRACK.Nombre AS "Nombre del Tema",  Instrumento
+FROM TrackMusico
+INNER JOIN Musico ON TrackMusico.Musico = MUSICO.ID_Musico
+INNER JOIN Track ON TrackMusico.Track = Track.ID_Track;
