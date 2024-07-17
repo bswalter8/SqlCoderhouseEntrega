@@ -12,6 +12,13 @@ AS SELECT TRACK.Nombre AS "Nombre del Track",  Compositor.Nombre AS "Compositor"
 FROM TRACK 
 INNER JOIN Compositor ON TRACK.Compositor = Compositor.ID_Compositor;
 
+-- Crea view con sellos activos actualmente 
+CREATE VIEW SELLOS_ACTIVOS
+AS
+SELECT Nombre, Fecha, Biografia
+FROM SELLO
+WHERE Activo=1;
+
 
 -- Crea view de todos los tracks y su album perteneciente
 
