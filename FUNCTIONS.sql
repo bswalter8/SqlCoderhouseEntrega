@@ -1,0 +1,10 @@
+ -- FUNCION PARA UTILIZAR EN EL CALCULO DE AÑOS, EJ SALIDA DE UN DISCO, AÑOS VIGENTES DE UN SELLO ETC
+
+CREATE FUNCTION `calcular_anios_transcurridos` (fecha DATE) RETURNS INT
+NO SQL
+BEGIN
+DECLARE resultado INT;
+
+SET resultado = TIMESTAMPDIFF(year,fecha, now()); 
+RETURN resultado;
+END
