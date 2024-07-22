@@ -8,3 +8,14 @@ DECLARE resultado INT;
 SET resultado = TIMESTAMPDIFF(year,fecha, now()); 
 RETURN resultado;
 END
+
+
+ -- FUNCION PARA CALCULAR LA CANTIDAD DE ITEMS EN UNA COLUMNA
+
+CREATE FUNCTION `calcular_cantidad` (Item CHAR(30), Columna CHAR(30), Tabla CHAR(30)) RETURNS INT
+READS SQL DATA 
+BEGIN
+DECLARE resultado INT;
+SET resultado = (SELECT COUNT(Columna) FROM Tabla WHERE Columna LIKE Item); 
+RETURN resultado;
+END

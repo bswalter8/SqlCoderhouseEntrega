@@ -23,10 +23,11 @@ WHERE Activo=1;
 -- Crea view de todos los tracks y su album perteneciente
 
 CREATE VIEW TRACKS_ALBUM
-AS SELECT AlbumTrack.TrackNumber AS "Numero de track en el disco", TRACK.Nombre AS "Nombre del Tema", Album.Nombre AS "Nombre del Album", Duracion, Fecha, Album.Genero AS "Genero del Album" 
+AS SELECT AlbumTrack.TrackNumber AS "Numero_de_track_en_disco", TRACK.Nombre AS "Nombre_del_Tema", Album.Nombre AS "Nombre_del_Album", Duracion, Fecha, Album.Genero AS "Genero_del_Album" 
 FROM AlbumTrack
 INNER JOIN Track ON AlbumTrack.Track = TRACK.ID_Track
 INNER JOIN Album ON AlbumTrack.Album = Album.ID_Album;
+
 
 -- Crea view de todos los musicos y el track grabado 
 
